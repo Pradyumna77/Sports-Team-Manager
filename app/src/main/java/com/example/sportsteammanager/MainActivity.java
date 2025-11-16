@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Attach this activity to the XML layout
+        // Attachs this activity to the XML layout
         setContentView(R.layout.activity_main);
 
-        // Link Java variables to the views defined in activity_main.xml
+        // Links Java variables to the views defined in activity_main.xml
         imageTeamFlag = findViewById(R.id.image_team_flag);
         editTeamName = findViewById(R.id.edit_team_name);
         editPostalCode = findViewById(R.id.edit_postal_code);
@@ -56,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Build a geo URI that will search for the given postal code
+        // Builds a geo URI that will search for the given postal code
         Uri geoUri = Uri.parse("geo:0,0?q=" + Uri.encode(postalCode));
 
         // Create an ACTION_VIEW intent for the geo URI
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, geoUri);
 
-        // Explicitly request the Google Maps package, as in the lab slides
+        // Requests the Google Maps package
         mapIntent.setPackage("com.google.android.apps.maps");
 
         // Start the external Google Maps activity
