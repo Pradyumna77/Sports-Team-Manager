@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SportsTeamManager</string>
+    <string name="label_team_flag_avatar">Team flag avatar</string>
+    <string name="label_team_name">Team name</string>
+    <string name="label_postal_code">Postal code</string>
+    <string name="button_open_maps">Open in Google Maps</string>
 </resources>
