@@ -25,18 +25,21 @@
                 android:id="@+id/imageView12"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_ca" />
 
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_eg" />
 
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_fr" />
         </TableRow>
 
@@ -48,18 +51,21 @@
                 android:id="@+id/imageView15"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_jp" />
 
             <ImageView
                 android:id="@+id/imageView16"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_kr" />
 
             <ImageView
                 android:id="@+id/imageView17"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_sp" />
         </TableRow>
 
@@ -71,18 +77,21 @@
                 android:id="@+id/imageView18"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_us" />
 
             <ImageView
                 android:id="@+id/imageView19"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_uk" />
 
             <ImageView
                 android:id="@+id/imageView20"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag_tr" />
         </TableRow>
 

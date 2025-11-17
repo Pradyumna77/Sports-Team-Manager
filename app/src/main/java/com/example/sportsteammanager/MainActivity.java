@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
@@ -28,6 +30,23 @@ public class MainActivity extends AppCompatActivity {
     // Text field where the user types the postal code / address
     private EditText editPostalCode;
 
+    // ActivityResultLauncher for profile selection
+    private ActivityResultLauncher<Intent> profileLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Intent data = result.getData();
+                    int imageId = data.getIntExtra("imageID", -1);
+
+                    if (imageId != -1) {
+                        String drawableName = getDrawableNameFromImageId(imageId);
+                        int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
+                        imageTeamFlag.setImageResource(resID);
+                    }
+                }
+            }
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +58,25 @@ public class MainActivity extends AppCompatActivity {
         imageTeamFlag = findViewById(R.id.image_team_flag);
         editTeamName = findViewById(R.id.edit_team_name);
         editPostalCode = findViewById(R.id.edit_postal_code);
+
+        // Set click listener on the flag image to open profile selector
+        imageTeamFlag.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProfileManger.class);
+            profileLauncher.launch(intent);
+        });
+    }
+
+    private String getDrawableNameFromImageId(int imageId) {
+        if (imageId == R.id.imageView12) return "flag_ca";
+        else if (imageId == R.id.imageView13) return "flag_eg";
+        else if (imageId == R.id.imageView14) return "flag_fr";
+        else if (imageId == R.id.imageView15) return "flag_jp";
+        else if (imageId == R.id.imageView16) return "flag_kr";
+        else if (imageId == R.id.imageView17) return "flag_sp";
+        else if (imageId == R.id.imageView18) return "flag_us";
+        else if (imageId == R.id.imageView19) return "flag_uk";
+        else if (imageId == R.id.imageView20) return "flag_tr";
+        return "flag_ca";
     }
 
     /**
